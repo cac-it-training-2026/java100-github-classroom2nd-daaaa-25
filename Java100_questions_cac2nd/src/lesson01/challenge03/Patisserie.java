@@ -22,5 +22,33 @@
 package lesson01.challenge03;
 
 public class Patisserie {
+	public static void main(String[] args) {
+
+		//		int num;
+		//		num = 30;
+		////
+		//		System.out.println("本日のおすすめ商品です。\n");
+		//		System.out.println("シトロン　　　\\250・・・残り" + num + "個");
+		//		System.out.println("ショコラ　　　\\280・・・残り" + num + "個");
+		//		System.out.println("ピスターシュ　\\320・・・残り" + num + "個");
+		//㊤がもともと自分でやった部分
+		//		回答を見てみると一気に同じ変数として代入するのではなく種類別に1個ずつ変数を宣言してあげる
+		//		正解は㊦
+
+		int citron;
+		citron = 30;
+
+		int chocolate;
+		chocolate = 30;
+
+		int pista;
+		pista = 30;
+
+		System.out.println("本日のおすすめ商品です。\n");
+		System.out.println("シトロン　　　\\250・・・残り" + citron + "個");
+		System.out.println("ショコラ　　　\\280・・・残り" + chocolate + "個");
+		System.out.println("ピスターシュ　\\320・・・残り" + pista + "個");
+
+	}
 
 }
