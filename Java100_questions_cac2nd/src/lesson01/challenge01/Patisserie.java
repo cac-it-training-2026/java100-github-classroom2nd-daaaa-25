@@ -15,5 +15,6 @@
 package lesson01.challenge01;
 
 public class Patisserie {
+	//okuda テストコメント
 
 }
