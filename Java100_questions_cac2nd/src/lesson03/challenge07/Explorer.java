@@ -80,19 +80,161 @@ public class Explorer {
 		int alligator = 0;
 		int hand = 0;
 		int i = 0;
+		//ここでいうint i はじゃんけんの回数のこと
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-
 		//ここにwhile文、if文を利用した処理を記述
+		while (i < 3) {
 
+			System.out.println("隊長");
+			System.out.println("どのどの手を出して通り抜けますか");
+			System.out.print("（グー… 1 : チョキ… 2 : パー… 3）＞");
+
+			String handstr = br.readLine();
+			hand = Integer.parseInt(handstr);
+
+			alligator = (int) (Math.random() * 3) + 1;
+
+			if (hand == 1) {
+				if (alligator == 1 || alligator == 2) {
+					String kind = (alligator == 1) ? "グーワニ" : "チョキワニ";
+					System.out.println("相手は" + kind + "でした。");
+					System.out.println((i + 1) + "匹目通り抜け成功！");
+					i++;
+				} else {
+					System.out.println("相手はパーワニでした。");
+					System.out.println("通り抜けに失敗しました...");
+					break;
+				}
+
+			} else if (hand == 2) {
+				if (alligator == 2 || alligator == 3) {
+					String kind = (alligator == 2) ? "チョキワニ" : "パーワニ";
+					System.out.println("相手は" + kind + "でした。");
+					System.out.println((i + 1) + "匹目通り抜け成功！");
+					i++;
+				} else {
+					System.out.println("相手はグーワニでした。");
+					System.out.println("通り抜けに失敗しました...");
+					break;
+				}
+
+			} else if (hand == 3) {
+				if (alligator == 1 || alligator == 3) {
+					String kind = (alligator == 1) ? "グーワニ" : "パーワニ";
+					System.out.println("相手は" + kind + "でした。");
+					System.out.println((i + 1) + "匹目通り抜け成功！");
+					i++;
+				} else {
+					System.out.println("相手はチョキワニでした。");
+					System.out.println("通り抜けに失敗しました...");
+					break;
+				}
+
+			} else {
+				System.out.println("そんな手はありませんよ。もう一度入れてください。");
+			}
+		}
 
 		if (i == 3) {
 			System.out.println("隊長：");
 			System.out.println("川を渡り切りました。");
-		} else {
-			System.out.println("通り抜けに失敗しました...");
 		}
-
 	}
 }
+
+//		while (i < 3) {
+//			//iが3になるまで
+//
+//			System.out.println("隊長");
+//			System.out.println("どのどの手を出して通り抜けますか");
+//			System.out.print("（グー… 1 : チョキ… 2 : パー… 3）＞");
+//
+//			String handstr = br.readLine();
+//			hand = Integer.parseInt(handstr);
+//			//ここで入力処理をする
+//
+//			alligator = (int) (Math.random() * 10 % 3) + 1;
+//			//これがワニの乱数
+//
+//			if (hand == 1 || hand == 2 || hand == 3) {
+//				if (hand == 1) {
+//					//出した手が１（グー）
+//
+//					if (alligator == 1 || alligator == 2) {
+//						//もしグーワニ　または　チョキワニ　がきたら
+//
+//						System.out.println("隊長");
+//
+//						String kind;
+//						//ここでワニの名称が入る変数を宣言する
+//
+//						if (alligator == 1) {
+//							kind = "グーワニ";
+//						} else {
+//							kind = "チョキワニ";
+//						} //ここでもしワニが１だったらグーワニになるように２だったらチョキワニと表示されるように代入。次で使える
+//
+//						System.out.println("相手は" + kind + "でした。");
+//						System.out.println((i + 1) + "匹目通り抜け成功！");
+//						//ここまでがもしグーワニかチョキワニが出た場合のこと
+//						i++;
+//
+//					} else {//ここからが１．２のワニ以外　つまり３のパーワニが出た場合の出力について
+//						System.out.println("隊長");
+//						System.out.println("相手はパーワニでした。");
+//						System.out.println("通り抜けに失敗しました...");
+//						break;
+//					}
+//
+//				}
+//				//ここからがもし
+//			}else if(hand == 2) {
+//					//出した手が２（チョキ）
+//					if (alligator == 2 || alligator == 3) {
+//						System.out.println("隊長");
+//
+//						String kind2;
+//						if (alligator == 2) {
+//							kind2 = "チョキワニ";
+//						} else {
+//							kind2 = "パーワニ";
+//						} //ここでさっきと同じで種類の変数を宣言した後にそれを代入する。
+//
+//						System.out.println("相手は" + kind2 + "でした。");
+//						System.out.println((i + 1) + "匹目通り抜け成功！");
+//						i++;
+//					} else {
+//						System.out.println("隊長");
+//						System.out.println("相手はグーワニでした。");
+//						System.out.println("通り抜けに失敗しました...");
+//						break;
+//					}
+//				}
+//		   }else if(hand == 3) {
+//			
+//					if (alligator == 1 || alligator == 3) {
+//						System.out.println("隊長");
+//
+//						String kind3;
+//						if (alligator == 1) {
+//							kind3 = "グーワニ";
+//						} else {
+//							kind3 = "パーワニ";
+//						}
+//						System.out.println("相手は" + kind3 + "でした。");
+//						System.out.println((i + 1) + "匹目通り抜け成功！");
+//						i++;
+//					} else {
+//						System.out.println("隊長");
+//						System.out.println("相手はチョキワニでした。");
+//						System.out.println("通り抜けに失敗しました...");
+//						break;
+//					}
+//			}else {
+//		;
+//		System.out.println("隊長");
+//		System.out.println("そんな手はありませんよ。もう一度入れてください。");
+//		
+//	}
+//}

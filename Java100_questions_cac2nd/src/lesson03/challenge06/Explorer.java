@@ -79,27 +79,48 @@ import java.io.InputStreamReader;
 
 public class Explorer {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.println("隊長：");
-        System.out.println("トラ発見！\n");
+		System.out.println("隊長：");
+		System.out.println("トラ発見！\n");
 
-        int deepSleepTime = (int) (Math.random() * 10 % 3) + 1;
-        int goTime = 0;
+		int deepSleepTime = (int) (Math.random() * 10 % 3) + 1;
+		//ここの値はあくまでも最後のif文のところで乱数として出てくるもし乱数と通ったタイミングが一緒だったら成功みたいな感じ
+		int goTime = 0;
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		//ここにfor文、if文を利用した処理を記述
+		for (int i = 1; i <= 3; i++) {
+			//1から3までの時、iが1ずつ増えていく
 
-        //ここにfor文、if文を利用した処理を記述
+			System.out.println("隊長\n");
+			System.out.println(i + "時間経過。");
 
+			if (i != 3) {
 
-        if (deepSleepTime == goTime) {
-            System.out.println("\n隊長：");
-            System.out.println("成功！トラはぐっすり寝ています。");
-        } else {
-            System.out.println("\n隊長：");
-            System.out.println("しまったトラがまだ起きてた！");
-        }
+				//iが3じゃないときは
+				System.out.println("今通り抜けますか？（はい… 1 : いいえ… その他のキー)>");
+				String num = br.readLine();
+				int num2 = Integer.parseInt(num);
+				//入力処理中↑
 
-    }
+				//その中でももし入力されたのが1ならbreakでgotimeにiを入力して次のif文に移る
+				if (num2 == 1) {
+					goTime = i;
+					break;
+					//もし１が出た場合は即刻それで終了にするため
+				}
+
+			}
+		}
+		if (deepSleepTime == goTime) {
+			System.out.println("\n隊長：");
+			System.out.println("成功！トラはぐっすり寝ています。");
+		} else {
+			System.out.println("\n隊長：");
+			System.out.println("しまったトラがまだ起きてた！");
+		}
+
+	}
 }
