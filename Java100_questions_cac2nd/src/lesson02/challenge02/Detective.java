@@ -26,7 +26,8 @@ public class Detective {
 
 		boolean appointment = false;
 
-		if (appointment) {
+		if (!appointment) {
+			//推理否定である！をappointmentの前に入れることでtrueになり実行される
 			System.out.println("助手：");
 			System.out.println("いつも空いています。");
 		}
