@@ -39,27 +39,29 @@ import java.io.InputStreamReader;
 
 public class RobotMaker {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.println("Rさん：");
-        System.out.println("でもランダムだと必要な量だけ出せないですね。\n");
-        System.out.println("G博士：");
-        System.out.println("そう言うと思って水量調節機能を実装してみたぞ。\n");
-        System.out.println("Rさん：");
-        System.out.println("どうやって使うんですか？\n");
-        System.out.println("G博士：");
-        System.out.println("簡単じゃ。必要な水量をリットル単位で入力すればいいんじゃ。\n");
+		System.out.println("Rさん：");
+		System.out.println("でもランダムだと必要な量だけ出せないですね。\n");
+		System.out.println("G博士：");
+		System.out.println("そう言うと思って水量調節機能を実装してみたぞ。\n");
+		System.out.println("Rさん：");
+		System.out.println("どうやって使うんですか？\n");
+		System.out.println("G博士：");
+		System.out.println("簡単じゃ。必要な水量をリットル単位で入力すればいいんじゃ。\n");
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.print("出したい水の量を入力してください＞");
-        String waterStr = br.readLine();
-        int water = Integer.parseInt(waterStr);
+		System.out.print("出したい水の量を入力してください＞");
+		String waterStr = br.readLine();
+		int water = Integer.parseInt(waterStr);
 
-        //ここでRobotクラスのインスタンスを作り、
-        //（インスタンス名はrobot）
-        //setWaterを実行する。
-        //pumpWaterを実行する。
-    }
+		Robot robot = new Robot();
+		robot.setWater(water);
+		//ここでRobotクラスのインスタンスを作り、
+		//（インスタンス名はrobot）
+		//setWaterを実行する。
+		//pumpWaterを実行する。
+	}
 
 }
